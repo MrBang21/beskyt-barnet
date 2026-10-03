@@ -39,6 +39,7 @@
 * {
 	box-sizing: border-box;
 	corner-shape: squircle;
+	text-wrap: pretty;
 }
 
 html {
@@ -74,10 +75,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-img {
-	max-width: 100%;
-}
-
 .container {
 	width: min(100% - 2.5em, var(--max-width));
 	margin: 0 auto;
@@ -88,22 +85,21 @@ header {
 	top: 0;
 	z-index: 1000;
 	background: var(--header);
-	backdrop-filter: blur(0.875em);
-	border-bottom: 0.0625em solid var(--border);
+	backdrop-filter: blur(0.9em);
+	border-bottom: 1px solid var(--border);
 }
 
 .nav {
-	min-height: 4.375em;
+	min-height: 4.5em;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 1.875em;
+	gap: 2em;
 }
 
 .brand {
 	color: var(--text);
 	font-weight: 750;
-	letter-spacing: -0.02em;
 	white-space: nowrap;
 }
 
@@ -128,9 +124,9 @@ header {
 	text-decoration: none;
 }
 
-@media (max-width: 53.125em) {
+@media (max-width: 110ch) {
 	.nav {
-		min-height: 3.875em;
+		min-height: 5em;
 	}
 
 	.nav-links {
@@ -148,25 +144,25 @@ header {
 	gap: 0.5em;
 
 	margin-bottom: 1em;
-	padding: .5em 1em;
+	padding: 0.5em 1em;
 
-	border: 0.0625em solid var(--border);
-	border-radius: 999em;
+	border: 1px solid var(--border);
+	border-radius: 1em;
 
 	color: var(--text-soft);
 	background: var(--header);
 
-	font-size: 0.78em;
+	font-size: 0.8em;
 	font-weight: 700;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.2ch;
 	text-transform: uppercase;
 }
 
 .hero h1 {
-	margin: 0 0 .25em;
+	margin: 0 0 0.3em;
 	font-size: 4em;
 	line-height: 1.05;
-	letter-spacing: -0.045em;
+	letter-spacing: -0.05ch;
 }
 
 .hero-lead {
@@ -184,17 +180,17 @@ header {
 
 .meta {
 	padding: 0.5em 1em;
-	border: 0.0625em solid var(--border);
+	border: 1px solid var(--border);
 	border-radius: 0.5em;
 	color: var(--muted);
-	background: var(--surface);
-	font-size: 0.85em;
+	background: var(--header);
+	font-size: 0.9em;
 }
 
 .notice {
 	margin: 0 0 3em;
 	padding: 1em;
-	border: 0.1em solid var(--warning);
+	border: 1px solid var(--warning);
 	border-left-width: 0.5em;
 	border-radius: var(--radius);
 	background: var(--warning-bg);
@@ -220,48 +216,51 @@ section {
 }
 
 .section-number {
-	margin-bottom: 0.4375em;
+	margin-bottom: 0.4em;
 	color: var(--accent);
 	font-size: 0.8em;
 	font-weight: 750;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.2ch;
 	text-transform: uppercase;
 }
 
+h1, h2, h3 { 
+	margin: 0 0 1em;
+	letter-spacing: -0.05ch;
+	line-height: 1.3;
+}
+h1 {
+	font-size: 2em;
+}
+
 h2 {
-	margin: 0;
-	font-size: clamp(1.8em, 4vw, 2.7em);
-	line-height: 1.15;
-	letter-spacing: -0.03em;
+	font-size: 1.8em;
 }
 
 h3 {
-	margin: 2em 0 0.75em;
-	font-size: 1.3em;
-	line-height: 1.3;
+	font-size: 1.6em;
 }
 
 p {
-	margin: 0 0 1.125em;
+	margin: 0 0 1.2em;
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .muted {
 	color: var(--text-soft);
 }
 
-/* -----------------------------
-	Summary cards
------------------------------ */
-
 .summary-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 1.125em;
+	gap: 1em;
 }
 
 .summary-card {
-	padding: 1.625em;
-	border: 0.0625em solid var(--border);
+	padding: 1.5em;
+	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	background: var(--surface);
 	box-shadow: var(--shadow);
@@ -272,11 +271,11 @@ p {
 	align-items: center;
 	justify-content: center;
 
-	width: 2.375em;
-	height: 2.375em;
-	margin-bottom: 1.125em;
+	width: 2.5em;
+	height: 2.5em;
+	margin-bottom: 1em;
 
-	border-radius: 0.5625em;
+	border-radius: 0.5em;
 
 	background: oklch(0.77 0.12 254 / 0.1);
 	color: var(--accent);
@@ -291,32 +290,28 @@ p {
 .summary-card p {
 	margin-bottom: 0;
 	color: var(--text-soft);
-	font-size: 0.95em;
+	font-size: 1em;
 }
 
-@media (max-width: 50em) {
+@media (max-width: 100ch) {
 	.summary-grid {
 		grid-template-columns: 1fr;
 	}
 }
 
-/* -----------------------------
-	Principle box
------------------------------ */
-
 .principle {
 	padding: 2em;
-	border: 0.0625em solid oklch(0.78 0.1 159 / 0.25);
+	border: 1px solid oklch(0.78 0.1 159 / 0.25);
 	border-radius: var(--radius);
 	background: var(--success-bg);
 }
 
 .principle-title {
-	margin-bottom: 0.625em;
+	margin-bottom: 0.5em;
 	color: var(--success);
 	font-size: 0.8em;
 	font-weight: 800;
-	letter-spacing: 0.09em;
+	letter-spacing: 0.2ch;
 	text-transform: uppercase;
 }
 
@@ -324,20 +319,16 @@ p {
 	margin-bottom: 0;
 }
 
-/* -----------------------------
-	Introductory law information
------------------------------ */
-
 .law-intro {
 	display: flex;
 	flex-direction: column;
-	gap: 1.125em;
+	gap: 1em;
 	margin-bottom: 2.5em;
 }
 
 .law-intro-card {
-	padding: 1.625em;
-	border: 0.0625em solid var(--border);
+	padding: 1.5em;
+	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	background: var(--surface);
 }
@@ -352,35 +343,31 @@ p {
 
 .law-intro-card ol,
 .law-intro-card ul {
-	margin: 0.625em 0 0 1.75em;
+	margin: 0.5em 0 0 1.8em;
 	padding: 0;
 }
 
 .law-intro-card li {
-	margin: 0.375em 0;
+	margin: 0.4em 0;
 	color: var(--text-soft);
 }
-
-/* -----------------------------
-	Law text
------------------------------ */
 
 .law {
 	display: flex;
 	flex-direction: column;
-	gap: 1.375em;
+	gap: 1.4em;
 }
 
 .law-chapter {
 	display: flex;
 	flex-direction: column;
-	gap: 1.375em;
+	gap: 1.4em;
 }
 
 .chapter {
-	margin: 1.5625em 0 0;
-	padding: 0.75em 0 0.3125em;
-	border-bottom: 0.0625em solid var(--border);
+	margin: 1.6em 0 0;
+	padding: 0.8em 0 0.3em;
+	border-bottom: 1px solid var(--border);
 }
 
 .law-chapter:first-child .chapter {
@@ -389,19 +376,19 @@ p {
 
 .chapter-label {
 	color: var(--accent);
-	font-size: 0.76em;
+	font-size: 0.8em;
 	font-weight: 800;
-	letter-spacing: 0.12em;
+	letter-spacing: 0.2ch;
 	text-transform: uppercase;
 }
 
 .chapter h3 {
-	margin: 0.3125em 0 0;
+	margin: 0.3em 0 0;
 }
 
 .law-section {
-	padding: 1.6875em 1.8125em;
-	border: 0.0625em solid var(--border);
+	padding: 1.7em 1.8em;
+	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	background: var(--surface);
 }
@@ -411,7 +398,7 @@ p {
 }
 
 .paragraph {
-	margin-bottom: 1.0625em;
+	margin-bottom: 1.1em;
 	scroll-margin-top: 6em;
 }
 
@@ -426,12 +413,12 @@ p {
 
 .law-section ol,
 .law-section ul {
-	margin: 0.625em 0 0 1.75em;
+	margin: 0.5em 0 0 1.8em;
 	padding: 0;
 }
 
 .law-section li {
-	margin: 0.375em 0;
+	margin: 0.5em 0;
 	color: var(--text-soft);
 }
 
@@ -451,19 +438,15 @@ p {
 	text-decoration: underline;
 }
 
-/* -----------------------------
-	Explanatory cards
------------------------------ */
-
 .explanation {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 1.125em;
+	gap: 1em;
 }
 
 .explanation-card {
-	padding: 1.625em;
-	border: 0.0625em solid var(--border);
+	padding: 1.5em;
+	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	background: var(--surface);
 }
@@ -476,19 +459,15 @@ p {
 	color: var(--text-soft);
 }
 
-@media (max-width: 50em) {
+@media (max-width: 100ch) {
 	.explanation {
 		grid-template-columns: 1fr;
 	}
 }
 
-/* -----------------------------
-	Legal notes
------------------------------ */
-
 .legal-note {
 	padding: 1.5em;
-	border: 0.0625em solid var(--border);
+	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	background: var(--bg-soft);
 }
@@ -509,14 +488,10 @@ p {
 	margin-bottom: 0;
 }
 
-/* -----------------------------
-	Open questions
------------------------------ */
-
 .question-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.75em;
+	gap: 0.8em;
 
 	margin: 0;
 	padding: 0;
@@ -527,12 +502,12 @@ p {
 .question-list li {
 	display: grid;
 	grid-template-columns: 2em 1fr;
-	gap: 0.8125em;
+	gap: 0.8em;
 
-	padding: 1.125em 1.25em;
+	padding: 1.1em 1.3em;
 
-	border: 0.0625em solid var(--border);
-	border-radius: 0.625em;
+	border: 1px solid var(--border);
+	border-radius: 0.5em;
 
 	background: var(--surface);
 }
@@ -542,8 +517,8 @@ p {
 	align-items: center;
 	justify-content: center;
 
-	width: 1.875em;
-	height: 1.875em;
+	width: 2em;
+	height: 2em;
 
 	border-radius: 50%;
 
@@ -555,78 +530,70 @@ p {
 
 .question-list strong {
 	display: block;
-	margin-bottom: 0.1875em;
+	margin-bottom: 0.2em;
 }
 
 .question-list span:last-child {
 	color: var(--text-soft);
-	font-size: 0.94em;
+	font-size: 0.9em;
 }
-
-/* -----------------------------
-	Sources
------------------------------ */
 
 .sources {
 	display: flex;
 	flex-direction: column;
-	gap: 0.625em;
+	gap: 0.75em;
 }
 
 .source {
-	padding: 1.125em 1.25em;
-	border: 0.0625em solid var(--border);
-	border-radius: 0.625em;
+	padding: 1.25em 1.5em;
+	border: 1px solid var(--border);
+	border-radius: 0.5em;
 	background: var(--surface);
 }
 
 .source strong {
 	display: block;
-	margin-bottom: 0.25em;
+	margin-bottom: 0.3em;
 }
 
 .source span {
 	color: var(--muted);
-	font-size: 0.88em;
+	font-size: 0.9em;
 }
 
-/* -----------------------------
-	Footer
------------------------------ */
-
 footer {
-	margin-top: 6.25em;
-	padding: 2.8125em 0;
-	border-top: 0.0625em solid var(--border);
+	margin-top: 6em;
+	padding: 3em 0;
+	border-top: 1px solid var(--border);
 	color: var(--muted);
-	font-size: 0.88em;
+	font-size: 0.9em;
 }
 
 .footer-grid {
 	display: flex;
 	justify-content: space-between;
-	gap: 1.875em;
+	gap: 2em;
 }
 
 .footer-grid p {
 	margin: 0;
 }
 
-@media (max-width: 43.75em) {
+@media (max-width: 80ch) {
 	.container {
-		width: min(100% - 1.75em, var(--max-width));
+		width: min(100% - 1.5em, var(--max-width));
 	}
 
 	.hero {
-		padding: 4.0625em 0 3.125em;
+		padding: 4em 0 3em;
 	}
 
 	section {
-		margin-bottom: 4.0625em;
+		margin-bottom: 4em;
 	}
 
 	.law-section {
-		padding: 1.375em;
+		padding: 1.5em;
 	}
 
 	.principle {
@@ -651,7 +618,7 @@ footer {
 	width: 2.5em;
 	height: 2.5em;
 
-	border: 0.0625em solid var(--border);
+	border: 1px solid var(--border);
 	border-radius: 50%;
 	corner-shape: round;
 
@@ -683,7 +650,7 @@ footer {
 	}
 
 	.hero {
-		padding: 1.875em 0;
+		padding: 2em 0;
 	}
 
 	.law-section,
@@ -692,7 +659,7 @@ footer {
 	.legal-note,
 	.law-intro-card {
 		background: white;
-		border: 0.0625em solid #ccc;
+		border: 1px solid #ccc;
 		box-shadow: none;
 		break-inside: avoid;
 	}
@@ -784,7 +751,7 @@ footer {
 				</p>
 			</div>
 
-			<div class="summary-grid" style="margin-top: 1.125em;">
+			<div class="summary-grid" style="margin-top: 1.1em;">
 				<article class="summary-card">
 					<div class="number">1</div>
 					<h3>Beskyttelse</h3>
