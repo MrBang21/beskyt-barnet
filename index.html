@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beskyttelse af mindreåriges kønsorganer | Lovforslag</title>
+<meta name="description" content="Privat udarbejdet lovforslag om beskyttelse af mindreåriges kønsorganer mod ikke-terapeutiske irreversible indgreb.">
+<meta name="author" content="https://github.com/MrBang21">
+<style>
+:root {
+	--bg: oklch(0.17 0.01 254);
+	--bg-soft: oklch(0.2 0.02 254);
+	--header: oklch(0.17 0.01 254);
+	--surface: oklch(0.22 0.02 254);
+	--surface-light: oklch(0.27 0.03 254);
+	--border: oklch(0.32 0.03 254);
+	--text: oklch(0.94 0.01 254);
+	--text-soft: oklch(0.78 0.02 254);
+	--muted: oklch(0.63 0.03 254);
+
+	--accent: oklch(0.77 0.12 254);
+	--accent-hover: oklch(0.85 0.15 254);
+
+	--warning: oklch(0.85 0.11 82);
+	--warning-bg: oklch(0.85 0.11 82 / 0.1);
+
+	--success: oklch(0.85 0.11 160);
+	--success-bg: oklch(0.85 0.11 160 / 0.1);
+
+	--danger: oklch(0.85 0.11 20);
+	--danger-bg: oklch(0.85 0.11 20 / 0.1);
+
+	--max-width: 120ch;
+	--radius: 0.5em;
+
+	--shadow: 0 0.4em 2em #0004;
+}
+
+* {
+	box-sizing: border-box;
+	corner-shape: squircle;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5em;
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+body {
+	margin: 0;
+	background:
+		radial-gradient(circle at 20% 0%,
+			oklch(0.77 0.12 254 / 0.08),
+			transparent 35%),
+		var(--bg);
+	color: var(--text);
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
+	line-height: 1.7;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--accent-hover);
+	text-decoration: underline;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	width: min(100% - 2.5em, var(--max-width));
+	margin: 0 auto;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: var(--header);
+	backdrop-filter: blur(0.875em);
+	border-bottom: 0.0625em solid var(--border);
+}
+
+.nav {
+	min-height: 4.375em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.875em;
+}
+
+.brand {
+	color: var(--text);
+	font-weight: 750;
+	letter-spacing: -0.02em;
+	white-space: nowrap;
+}
+
+.brand:hover {
+	color: var(--text);
+	text-decoration: none;
+}
+
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	font-size: 0.9em;
+}
+
+.nav-links a {
+	color: var(--text-soft);
+}
+
+.nav-links a:hover {
+	color: var(--text);
+	text-decoration: none;
+}
+
+@media (max-width: 53.125em) {
+	.nav {
+		min-height: 3.875em;
+	}
+
+	.nav-links {
+		display: none;
+	}
+}
+
+.hero {
+	padding: 3em 0;
+}
+
+.eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+
+	margin-bottom: 1em;
+	padding: .5em 1em;
+
+	border: 0.0625em solid var(--border);
+	border-radius: 999em;
+
+	color: var(--text-soft);
+	background: var(--header);
+
+	font-size: 0.78em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.hero h1 {
+	margin: 0 0 .25em;
+	font-size: 4em;
+	line-height: 1.05;
+	letter-spacing: -0.045em;
+}
+
+.hero-lead {
+	margin: 0;
+	color: var(--text-soft);
+	font-size: 1.2em;
+}
+
+.hero-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	margin-top: 1em;
+}
+
+.meta {
+	padding: 0.5em 1em;
+	border: 0.0625em solid var(--border);
+	border-radius: 0.5em;
+	color: var(--muted);
+	background: var(--surface);
+	font-size: 0.85em;
+}
+
+.notice {
+	margin: 0 0 3em;
+	padding: 1em;
+	border: 0.1em solid var(--warning);
+	border-left-width: 0.5em;
+	border-radius: var(--radius);
+	background: var(--warning-bg);
+}
+
+.notice strong {
+	display: block;
+	margin-bottom: 0.5em;
+	color: var(--warning);
+}
+
+.notice p {
+	margin: 0;
+	color: var(--text-soft);
+}
+
+section {
+	margin-bottom: 3em;
+}
+
+.section-header {
+	margin-bottom: 1em;
+}
+
+.section-number {
+	margin-bottom: 0.4375em;
+	color: var(--accent);
+	font-size: 0.8em;
+	font-weight: 750;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+h2 {
+	margin: 0;
+	font-size: clamp(1.8em, 4vw, 2.7em);
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+}
+
+h3 {
+	margin: 2em 0 0.75em;
+	font-size: 1.3em;
+	line-height: 1.3;
+}
+
+p {
+	margin: 0 0 1.125em;
+}
+
+.muted {
+	color: var(--text-soft);
+}
+
+/* -----------------------------
+	Summary cards
+----------------------------- */
+
+.summary-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.125em;
+}
+
+.summary-card {
+	padding: 1.625em;
+	border: 0.0625em solid var(--border);
+	border-radius: var(--radius);
+	background: var(--surface);
+	box-shadow: var(--shadow);
+}
+
+.summary-card .number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 2.375em;
+	height: 2.375em;
+	margin-bottom: 1.125em;
+
+	border-radius: 0.5625em;
+
+	background: oklch(0.77 0.12 254 / 0.1);
+	color: var(--accent);
+
+	font-weight: 800;
+}
+
+.summary-card h3 {
+	margin-top: 0;
+}
+
+.summary-card p {
+	margin-bottom: 0;
+	color: var(--text-soft);
+	font-size: 0.95em;
+}
+
+@media (max-width: 50em) {
+	.summary-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* -----------------------------
+	Principle box
+----------------------------- */
+
+.principle {
+	padding: 2em;
+	border: 0.0625em solid oklch(0.78 0.1 159 / 0.25);
+	border-radius: var(--radius);
+	background: var(--success-bg);
+}
+
+.principle-title {
+	margin-bottom: 0.625em;
+	color: var(--success);
+	font-size: 0.8em;
+	font-weight: 800;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+}
+
+.principle p:last-child {
+	margin-bottom: 0;
+}
+
+/* -----------------------------
+	Introductory law information
+----------------------------- */
+
+.law-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 1.125em;
+	margin-bottom: 2.5em;
+}
+
+.law-intro-card {
+	padding: 1.625em;
+	border: 0.0625em solid var(--border);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+
+.law-intro-card h3 {
+	margin-top: 0;
+}
+
+.law-intro-card p {
+	color: var(--text-soft);
+}
+
+.law-intro-card ol,
+.law-intro-card ul {
+	margin: 0.625em 0 0 1.75em;
+	padding: 0;
+}
+
+.law-intro-card li {
+	margin: 0.375em 0;
+	color: var(--text-soft);
+}
+
+/* -----------------------------
+	Law text
+----------------------------- */
+
+.law {
+	display: flex;
+	flex-direction: column;
+	gap: 1.375em;
+}
+
+.law-chapter {
+	display: flex;
+	flex-direction: column;
+	gap: 1.375em;
+}
+
+.chapter {
+	margin: 1.5625em 0 0;
+	padding: 0.75em 0 0.3125em;
+	border-bottom: 0.0625em solid var(--border);
+}
+
+.law-chapter:first-child .chapter {
+	margin-top: 0;
+}
+
+.chapter-label {
+	color: var(--accent);
+	font-size: 0.76em;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.chapter h3 {
+	margin: 0.3125em 0 0;
+}
+
+.law-section {
+	padding: 1.6875em 1.8125em;
+	border: 0.0625em solid var(--border);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+
+.law-section:hover {
+	border-color: #364456;
+}
+
+.paragraph {
+	margin-bottom: 1.0625em;
+	scroll-margin-top: 6em;
+}
+
+.paragraph:last-child {
+	margin-bottom: 0;
+}
+
+.paragraph-title {
+	font-weight: 800;
+	color: var(--text);
+}
+
+.law-section ol,
+.law-section ul {
+	margin: 0.625em 0 0 1.75em;
+	padding: 0;
+}
+
+.law-section li {
+	margin: 0.375em 0;
+	color: var(--text-soft);
+}
+
+.law-section p {
+	color: var(--text-soft);
+}
+
+.law-section .paragraph-title {
+	color: var(--text);
+}
+
+.law-reference {
+	white-space: nowrap;
+}
+
+.law-reference:hover {
+	text-decoration: underline;
+}
+
+/* -----------------------------
+	Explanatory cards
+----------------------------- */
+
+.explanation {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.125em;
+}
+
+.explanation-card {
+	padding: 1.625em;
+	border: 0.0625em solid var(--border);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+
+.explanation-card h3 {
+	margin-top: 0;
+}
+
+.explanation-card p {
+	color: var(--text-soft);
+}
+
+@media (max-width: 50em) {
+	.explanation {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* -----------------------------
+	Legal notes
+----------------------------- */
+
+.legal-note {
+	padding: 1.5em;
+	border: 0.0625em solid var(--border);
+	border-radius: var(--radius);
+	background: var(--bg-soft);
+}
+
+.legal-note + .legal-note {
+	margin-top: 1em;
+}
+
+.legal-note h3 {
+	margin-top: 0;
+}
+
+.legal-note p {
+	color: var(--text-soft);
+}
+
+.legal-note:last-child {
+	margin-bottom: 0;
+}
+
+/* -----------------------------
+	Open questions
+----------------------------- */
+
+.question-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75em;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.question-list li {
+	display: grid;
+	grid-template-columns: 2em 1fr;
+	gap: 0.8125em;
+
+	padding: 1.125em 1.25em;
+
+	border: 0.0625em solid var(--border);
+	border-radius: 0.625em;
+
+	background: var(--surface);
+}
+
+.question-list .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 1.875em;
+	height: 1.875em;
+
+	border-radius: 50%;
+
+	background: oklch(0.77 0.12 254 / 0.1);
+	color: var(--accent);
+
+	font-weight: 800;
+}
+
+.question-list strong {
+	display: block;
+	margin-bottom: 0.1875em;
+}
+
+.question-list span:last-child {
+	color: var(--text-soft);
+	font-size: 0.94em;
+}
+
+/* -----------------------------
+	Sources
+----------------------------- */
+
+.sources {
+	display: flex;
+	flex-direction: column;
+	gap: 0.625em;
+}
+
+.source {
+	padding: 1.125em 1.25em;
+	border: 0.0625em solid var(--border);
+	border-radius: 0.625em;
+	background: var(--surface);
+}
+
+.source strong {
+	display: block;
+	margin-bottom: 0.25em;
+}
+
+.source span {
+	color: var(--muted);
+	font-size: 0.88em;
+}
+
+/* -----------------------------
+	Footer
+----------------------------- */
+
+footer {
+	margin-top: 6.25em;
+	padding: 2.8125em 0;
+	border-top: 0.0625em solid var(--border);
+	color: var(--muted);
+	font-size: 0.88em;
+}
+
+.footer-grid {
+	display: flex;
+	justify-content: space-between;
+	gap: 1.875em;
+}
+
+.footer-grid p {
+	margin: 0;
+}
+
+@media (max-width: 43.75em) {
+	.container {
+		width: min(100% - 1.75em, var(--max-width));
+	}
+
+	.hero {
+		padding: 4.0625em 0 3.125em;
+	}
+
+	section {
+		margin-bottom: 4.0625em;
+	}
+
+	.law-section {
+		padding: 1.375em;
+	}
+
+	.principle {
+		padding: 1.5em;
+	}
+
+	.footer-grid {
+		flex-direction: column;
+	}
+}
+
+.top-link {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	z-index: 50;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 2.5em;
+	height: 2.5em;
+
+	border: 0.0625em solid var(--border);
+	border-radius: 50%;
+	corner-shape: round;
+
+	background: var(--surface);
+	color: var(--text);
+	box-shadow: var(--shadow);
+}
+
+.top-link:hover {
+	background: var(--surface-light);
+	color: var(--text);
+	text-decoration: none;
+}
+
+@media print {
+	body {
+		background: white;
+		color: black;
+	}
+
+	header,
+	.top-link,
+	footer {
+		display: none;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	.hero {
+		padding: 1.875em 0;
+	}
+
+	.law-section,
+	.summary-card,
+	.explanation-card,
+	.legal-note,
+	.law-intro-card {
+		background: white;
+		border: 0.0625em solid #ccc;
+		box-shadow: none;
+		break-inside: avoid;
+	}
+
+	.law-section p,
+	.summary-card p,
+	.explanation-card p,
+	.legal-note p,
+	.law-intro-card p,
+	.law-intro-card li {
+		color: #222;
+	}
+
+	a {
+		color: black;
+	}
+}
+</style>
+</head>
+
+<body id="top">
+
+<header>
+	<div class="container nav">
+		<a class="brand" href="#top">Beskyt Barnet</a>
+
+		<nav class="nav-links" aria-label="Hovednavigation">
+			<a href="#kort">Kort fortalt</a>
+			<a href="#lovforslag">Lovforslag</a>
+			<a href="#begrundelse">Begrundelse</a>
+			<a href="#juridisk">Juridisk</a>
+			<a href="#sporgsmaal">Åbne spørgsmål</a>
+			<a href="#kilder">Kilder</a>
+		</nav>
+	</div>
+</header>
+
+<main>
+
+	<section class="hero">
+		<div class="container">
+			<div class="eyebrow">Privat udarbejdet lovforslag</div>
+
+			<h1>Beskyttelse af mindreåriges kønsorganer mod ikke-terapeutiske irreversible indgreb</h1>
+
+			<p class="hero-lead">
+				Et forslag til et kønsneutralt lovværn om mindreåriges kropslige integritet og fremtidige selvbestemmelse.
+			</p>
+
+			<div class="hero-meta">
+				<span class="meta">Forslag til lov</span>
+				<span class="meta">18-års grænse</span>
+				<span class="meta">Kønsneutralt princip</span>
+				<span class="meta">Medicinsk nødvendighed som undtagelse</span>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+		<div class="notice">
+			<strong>Vigtigt: Dette er ikke gældende dansk lov</strong>
+
+			<p>
+				Dette er et privat udarbejdet lovforslag og ikke et fremsat eller vedtaget lovforslag i Folketinget.
+				Forslaget er udarbejdet som et konkret bud på, hvordan et kønsneutralt værn om mindreåriges
+				kropslige integritet og fremtidige selvbestemmelse kan udformes lovteknisk.
+			</p>
+		</div>
+	</div>
+
+	<section id="kort">
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">01 · Overblik</div>
+				<h2>I korte træk</h2>
+			</div>
+
+			<div class="principle">
+				<div class="principle-title">Hovedprincip</div>
+
+				<p>Ingen irreversible ikke-terapeutiske indgreb på mindreåriges kønsorganer.</p>
+
+				<p>Kun konkret medicinsk nødvendighed kan begrunde en undtagelse før myndighedsalderen.</p>
+
+				<p>
+					Når personen er myndig, bestemmer personen selv over egne kønsorganer
+					og kan give informeret samtykke til behandling.
+				</p>
+			</div>
+
+			<div class="summary-grid" style="margin-top: 1.125em;">
+				<article class="summary-card">
+					<div class="number">1</div>
+					<h3>Beskyttelse</h3>
+					<p>
+						Mindreårige beskyttes mod irreversible ikke-terapeutiske indgreb i kønsorganerne.
+					</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="number">2</div>
+					<h3>Medicinsk nødvendighed</h3>
+					<p>
+						Indgreb kan foretages, når der foreligger en konkret medicinsk nødvendighed
+						og betingelserne i lovforslaget er opfyldt.
+					</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="number">3</div>
+					<h3>Selvbestemmelse</h3>
+					<p>
+						Efter myndighedsalderen træffer personen selv beslutning om irreversible
+						indgreb på egne kønsorganer.
+					</p>
+				</article>
+			</div>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">02 · Formål</div>
+				<h2>Hvad forsøger forslaget at regulere?</h2>
+			</div>
+
+			<p class="muted">
+				Forslaget tager udgangspunkt i et generelt princip om, at irreversible ændringer
+				af et barns kønsorganer bør kræve en konkret medicinsk begrundelse, når barnet
+				ikke selv kan træffe den endelige beslutning som myndig person.
+			</p>
+
+			<p class="muted">
+				Reglen er formuleret kønsneutralt. Den er derfor ikke knyttet til et bestemt køn,
+				en bestemt religion eller en bestemt kulturel praksis. Det afgørende er indgrebets
+				karakter og begrundelse.
+			</p>
+
+			<p class="muted">
+				Forslaget skelner samtidig mellem behandling af en konkret medicinsk tilstand
+				og indgreb, der foretages uden et terapeutisk formål.
+			</p>
+
+		</div>
+	</section>
+
+	<section id="lovforslag">
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">03 · Lovteksten</div>
+				<h2>Forslag til lov</h2>
+				<p class="muted">
+					Den følgende tekst udgør selve lovudkastet. Afsnittet ovenfor om formål og definitioner
+					er en forklarende indledning og er ikke en del af lovens paragrafnummerering.
+				</p>
+			</div>
+
+			<div class="law">
+
+				<!-- Kapitel 1 -->
+
+				<div class="law-chapter" id="kapitel-1">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 1</div>
+						<h3>Forbud mod ikke-terapeutiske irreversible indgreb</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-1">
+							<span class="paragraph-title">§ 1.</span>
+							Det er forbudt at foretage et irreversibelt ikke-terapeutisk indgreb
+							på en mindreårigs kønsorganer.
+						</div>
+
+						<div class="paragraph" id="paragraf-1-stk-2">
+							<span class="paragraph-title">Stk. 2.</span>
+							Forbuddet gælder uanset indgrebets begrundelse, herunder religiøse,
+							kulturelle, traditionelle, sociale, kosmetiske eller identitetsrelaterede begrundelser.
+						</div>
+
+						<div class="paragraph" id="paragraf-1-stk-3">
+							<span class="paragraph-title">Stk. 3.</span>
+							Forældres eller værges samtykke kan ikke træde i stedet for den mindreåriges eget samtykke.
+						</div>
+
+						<div class="paragraph" id="paragraf-1-stk-4">
+							<span class="paragraph-title">Stk. 4.</span>
+							Den mindreåriges eget samtykke kan ikke i sig selv gøre et ikke-terapeutisk
+							irreversibelt indgreb lovligt før myndighedsalderen.
+						</div>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 2 -->
+
+				<div class="law-chapter" id="kapitel-2">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 2</div>
+						<h3>Medicinsk nødvendighed</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-2">
+							<span class="paragraph-title">§ 2.</span>
+							<a class="law-reference" href="#paragraf-1">§ 1</a>
+							finder ikke anvendelse, når et irreversibelt indgreb er medicinsk nødvendigt.
+						</div>
+
+						<div class="paragraph" id="paragraf-2-stk-2">
+							<span class="paragraph-title">Stk. 2.</span>
+							Et indgreb anses kun for medicinsk nødvendigt, når:
+						</div>
+
+						<ol>
+							<li>der foreligger en konkret sygdom, skade, funktionsforstyrrelse eller medfødt tilstand,</li>
+							<li>indgrebet har et direkte terapeutisk formål,</li>
+							<li>mindre indgribende behandlingsmuligheder ikke fagligt forsvarligt kan anvendes
+								eller må anses for utilstrækkelige, og</li>
+							<li>indgrebet begrænses til det, der er strengt nødvendigt.</li>
+						</ol>
+
+						<div class="paragraph" id="paragraf-2-stk-3">
+							<span class="paragraph-title">Stk. 3.</span>
+							Diagnose, behandlingsindikation og begrundelsen for, at et irreversibelt
+							indgreb er medicinsk nødvendigt, skal journalføres.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-3">
+							<span class="paragraph-title">§ 3.</span>
+							Følgende udgør ikke i sig selv medicinsk nødvendighed:
+						</div>
+
+						<ol>
+							<li>religiøs praksis,</li>
+							<li>kulturel praksis,</li>
+							<li>rituelle formål,</li>
+							<li>generelle hygiejniske hensyn,</li>
+							<li>kosmetiske ønsker, eller</li>
+							<li>generel sygdomsforebyggelse hos i øvrigt raske mindreårige.</li>
+						</ol>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-4">
+							<span class="paragraph-title">§ 4.</span>
+							Når et irreversibelt indgreb på en mindreårigs kønsorganer vurderes
+							at være medicinsk nødvendigt, skal vurderingen som hovedregel foretages
+							eller understøttes af to uafhængige speciallæger med relevant fagområde.
+						</div>
+
+						<div class="paragraph" id="paragraf-4-stk-2">
+							<span class="paragraph-title">Stk. 2.</span>
+							De speciallæger, der foretager eller understøtter vurderingen,
+							må ikke have en økonomisk eller anden væsentlig interesse i, at indgrebet gennemføres.
+						</div>
+
+						<div class="paragraph" id="paragraf-4-stk-3">
+							<span class="paragraph-title">Stk. 3.</span>
+							Den læge, der skal foretage indgrebet, kan ikke alene træffe afgørelse
+							om, at indgrebet er medicinsk nødvendigt.
+						</div>
+
+						<div class="paragraph" id="paragraf-4-stk-4">
+							<span class="paragraph-title">Stk. 4.</span>
+							Ved akutte tilstande, hvor hensynet til liv, helbred eller funktion
+							nødvendiggør øjeblikkelig behandling, kan stk. 1-3 fraviges i det omfang,
+							det er nødvendigt for at yde forsvarlig behandling.
+						</div>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 3 -->
+
+				<div class="law-chapter" id="kapitel-3">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 3</div>
+						<h3>Selvbestemmelse efter myndighedsalderen</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-5">
+							<span class="paragraph-title">§ 5.</span>
+							Loven begrænser ikke en myndig persons ret til selv at samtykke
+							til indgreb på egne kønsorganer.
+						</div>
+
+						<div class="paragraph" id="paragraf-5-stk-2">
+							<span class="paragraph-title">Stk. 2.</span>
+							Samtykke til et indgreb skal være frivilligt, informeret og specifikt.
+						</div>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 4 -->
+
+				<div class="law-chapter" id="kapitel-4">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 4</div>
+						<h3>Straf</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-6">
+							<span class="paragraph-title">§ 6.</span>
+							Den, der forsætligt overtræder
+							<a class="law-reference" href="#paragraf-1">§ 1</a>,
+							straffes med fængsel indtil 6 år.
+						</div>
+
+						<div class="paragraph" id="paragraf-6-stk-2">
+							<span class="paragraph-title">Stk. 2.</span>
+							Straffelovens almindelige regler om forsøg og medvirken finder anvendelse.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-7">
+							<span class="paragraph-title">§ 7.</span>
+							Ved straffens fastsættelse skal det i almindelighed indgå som
+							en skærpende omstændighed, hvis:
+						</div>
+
+						<ol>
+							<li>den mindreårige var under 15 år,</li>
+							<li>gerningspersonen har modtaget betaling eller anden økonomisk fordel,</li>
+							<li>indgrebet er foretaget som led i organiseret eller systematisk virksomhed,</li>
+							<li>indgrebet har medført alvorlige komplikationer,</li>
+							<li>indgrebet har medført permanent skade,</li>
+							<li>gerningspersonen har misbrugt sin professionelle eller betroede position, eller</li>
+							<li>indgrebet er foretaget mod den mindreåriges vilje eller under anvendelse af tvang.</li>
+						</ol>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 5 -->
+
+				<div class="law-chapter" id="kapitel-5">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 5</div>
+						<h3>Sundhedspersoner</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-8">
+							<span class="paragraph-title">§ 8.</span>
+							Ved overtrædelse af denne lov finder reglerne i autorisationsloven
+							om tilsyn, suspension, indskrænkning eller fratagelse af autorisation anvendelse.
+						</div>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 6 -->
+
+				<div class="law-chapter" id="kapitel-6">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 6</div>
+						<h3>Indgreb foretaget i udlandet</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-9">
+							<span class="paragraph-title">§ 9.</span>
+							Den, som forsætligt arrangerer, finansierer eller på anden væsentlig
+							måde medvirker til, at en mindreårig med bopæl i Danmark udsættes for
+							et indgreb omfattet af
+							<a class="law-reference" href="#paragraf-1">§ 1</a>
+							i udlandet, straffes efter
+							<a class="law-reference" href="#paragraf-6">§ 6</a>,
+							jf. straffelovens regler om medvirken og straffemyndighed.
+						</div>
+
+						<div class="paragraph" id="paragraf-9-stk-2">
+							<span class="paragraph-title">Stk. 2.</span>
+							Stk. 1 finder anvendelse, uanset om indgrebet er lovligt efter
+							lovgivningen i det land, hvor indgrebet foretages.
+						</div>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 7 -->
+
+				<div class="law-chapter" id="kapitel-7">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 7</div>
+						<h3>Behandling af komplikationer</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-10">
+							<span class="paragraph-title">§ 10.</span>
+							Loven er ikke til hinder for behandling af skader, komplikationer
+							eller senfølger efter tidligere foretagne indgreb.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-11">
+							<span class="paragraph-title">§ 11.</span>
+							Loven begrænser ikke adgangen til at yde nødvendig behandling
+							af skader, komplikationer eller senfølger efter indgreb omfattet af
+							<a class="law-reference" href="#paragraf-1">§ 1</a>.
+							Sådan behandling kan blandt andet omfatte:
+						</div>
+
+						<ol>
+							<li>akut behandling,</li>
+							<li>behandling af blødning,</li>
+							<li>behandling af infektion,</li>
+							<li>behandling af smerter,</li>
+							<li>behandling af arvæv,</li>
+							<li>behandling af funktionstab, og</li>
+							<li>rekonstruktiv kirurgi.</li>
+						</ol>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-12">
+							<span class="paragraph-title">§ 12.</span>
+							Behandling som nævnt i
+							<a class="law-reference" href="#paragraf-10">§ 10</a>
+							og
+							<a class="law-reference" href="#paragraf-11">§ 11</a>
+							udgør ikke en overtrædelse af denne lov.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-13">
+							<span class="paragraph-title">§ 13.</span>
+							Ved behandling af skader, komplikationer eller senfølger efter
+							indgreb omfattet af denne lov skal den mindst indgribende fagligt
+							forsvarlige behandling vælges.
+						</div>
+
+					</article>
+				</div>
+
+				<!-- Kapitel 8 -->
+
+				<div class="law-chapter" id="kapitel-8">
+					<div class="chapter">
+						<div class="chapter-label">Kapitel 8</div>
+						<h3>Journalføring, registrering og underretning</h3>
+					</div>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-14">
+							<span class="paragraph-title">§ 14.</span>
+							Autoriserede sundhedspersoner skal journalføre forhold omfattet
+							af denne lov efter de almindelige regler om journalføring i sundhedslovgivningen.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-14-a">
+							<span class="paragraph-title">§ 14 a.</span>
+							Sundhedsstyrelsen registrerer anonymiserede oplysninger om indgreb
+							foretaget efter
+							<a class="law-reference" href="#paragraf-2">§ 2</a>,
+							herunder den konkrete indikation og det anvendte undtagelsesgrundlag,
+							med henblik på tilsyn og evaluering af lovens anvendelse.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-14-b">
+							<span class="paragraph-title">§ 14 b.</span>
+							Sundhedsstyrelsen offentliggør mindst hvert tredje år en evaluering
+							af lovens anvendelse, herunder antallet af indgreb foretaget efter
+							<a class="law-reference" href="#paragraf-2">§ 2</a>.
+						</div>
+
+					</article>
+
+					<article class="law-section">
+
+						<div class="paragraph" id="paragraf-15">
+							<span class="paragraph-title">§ 15.</span>
+							Hvis der er rimelig grund til at antage, at en mindreårig har været
+							udsat for et indgreb i strid med denne lov, finder de almindelige
+							regler om underretning efter barnets lov anvendelse.
+						</div>
+
+					</article>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="begrundelse">
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">04 · Begrundelse</div>
+				<h2>Hvorfor er forslaget udformet sådan?</h2>
+			</div>
+
+			<div class="explanation">
+
+				<article class="explanation-card">
+					<h3>Kønsneutralt princip</h3>
+
+					<p>
+						Forslaget anvender samme grundprincip for alle mindreårige:
+						Et irreversibelt ikke-terapeutisk indgreb i kønsorganerne kan
+						ikke foretages før myndighedsalderen.
+					</p>
+
+					<p>
+						Det afgørende er derfor ikke, hvilket køn barnet har, eller hvilken
+						tradition der ligger bag indgrebet, men om indgrebet er irreversibelt
+						og ikke-terapeutisk.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Medicinsk nødvendighed</h3>
+
+					<p>
+						Forslaget indeholder en udtrykkelig undtagelse for medicinsk nødvendige indgreb.
+					</p>
+
+					<p>
+						Undtagelsen er samtidig afgrænset, så en konkret sygdom, skade,
+						funktionsforstyrrelse eller medfødt tilstand skal være til stede,
+						og indgrebet skal have et direkte terapeutisk formål.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Uafhængig vurdering</h3>
+
+					<p>
+						<a class="law-reference" href="#paragraf-4">§ 4</a>
+						indfører som hovedregel et krav om, at vurderingen af medicinsk nødvendighed
+						foretages eller understøttes af to uafhængige speciallæger.
+					</p>
+
+					<p>
+						Formålet er at skabe en ekstra kontrol af, om betingelserne for
+						undtagelsen faktisk er opfyldt.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Religion og kultur</h3>
+
+					<p>
+						Forslaget gør ikke religiøs eller kulturel begrundelse til en selvstændig
+						undtagelse fra hovedreglen.
+					</p>
+
+					<p>
+						Det skyldes, at lovforslaget er baseret på indgrebets karakter
+						og ikke på den religiøse eller kulturelle begrundelse.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Indgreb i udlandet</h3>
+
+					<p>
+						<a class="law-reference" href="#paragraf-9">§ 9</a>
+						er medtaget for at adressere situationer, hvor en mindreårig med bopæl
+						i Danmark bringes til udlandet med henblik på et indgreb, der ville være
+						omfattet af
+						<a class="law-reference" href="#paragraf-1">§ 1</a>
+						i Danmark.
+					</p>
+
+					<p>
+						Den præcise lovtekniske sammenhæng med straffelovens regler om dansk
+						straffemyndighed skal dog fastlægges nærmere.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Behandling af komplikationer</h3>
+
+					<p>
+						Forslaget skal ikke skabe en situation, hvor en læge afholder sig fra
+						at behandle en skade eller komplikation, fordi den oprindelige handling var ulovlig.
+					</p>
+
+					<p>
+						Derfor fastslår
+						<a class="law-reference" href="#paragraf-10">§§ 10-13</a>
+						udtrykkeligt, at nødvendig behandling af skader, komplikationer
+						og senfølger ikke rammes af lovens forbud.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Tilsyn og gennemsigtighed</h3>
+
+					<p>
+						<a class="law-reference" href="#paragraf-14-a">§ 14 a</a>
+						og
+						<a class="law-reference" href="#paragraf-14-b">§ 14 b</a>
+						etablerer et princip om registrering og løbende evaluering af de indgreb,
+						der foretages efter undtagelsen om medicinsk nødvendighed.
+					</p>
+
+					<p>
+						Det skal gøre det muligt at følge, hvordan undtagelsen anvendes i praksis.
+					</p>
+				</article>
+
+				<article class="explanation-card">
+					<h3>Selvbestemmelse</h3>
+
+					<p>
+						Forslaget begrænser ikke en myndig persons mulighed for selv at træffe
+						beslutning om indgreb på egne kønsorganer.
+					</p>
+
+					<p>
+						Hovedideen er dermed at placere den endelige beslutning om ikke-terapeutiske
+						irreversible ændringer hos den person, hvis krop ændres, når personen er myndig.
+					</p>
+				</article>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="juridisk">
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">05 · Juridiske overvejelser</div>
+				<h2>Juridisk vurdering</h2>
+			</div>
+
+			<div class="legal-note">
+
+				<h3>Grundloven og religionsfrihed</h3>
+
+				<p>
+					Et forslag, der begrænser en religiøst begrundet handling, rejser spørgsmål
+					om religionsfriheden efter grundlovens § 67. Bestemmelsen beskytter retten
+					til at dyrke Gud efter sin overbevisning, men indeholder samtidig en begrænsning
+					vedrørende sædeligheden og den offentlige orden.
+				</p>
+
+				<p>
+					En endelig juridisk vurdering vil derfor blandt andet skulle undersøge,
+					om indgrebet i den religiøse praksis er begrundet i hensyn, der kan varetages
+					inden for grundlovens rammer, og om lovens udformning er tilstrækkeligt generel
+					og ikke rettet mod en bestemt religion.
+				</p>
+
+			</div>
+
+			<div class="legal-note">
+
+				<h3>Den Europæiske Menneskerettighedskonvention</h3>
+
+				<p>
+					Forslaget kan blandt andet rejse spørgsmål efter EMRK artikel 8 om privatliv
+					og familieliv og artikel 9 om tanke-, samvittigheds- og religionsfrihed.
+				</p>
+
+				<p>
+					En nærmere vurdering vil skulle omfatte blandt andet hjemmel, legitimt formål,
+					nødvendighed og proportionalitet.
+				</p>
+
+			</div>
+
+			<div class="legal-note">
+
+				<h3>Straffeloven og handlinger i udlandet</h3>
+
+				<p>
+					Den nuværende straffelov indeholder allerede særlige regler om dansk
+					straffemyndighed ved visse handlinger foretaget i udlandet, herunder kvindelig omskæring.
+				</p>
+
+				<p>
+					<a class="law-reference" href="#paragraf-9">§ 9</a>
+					i dette forslag skal derfor ved en egentlig lovgivningsproces koordineres
+					præcist med straffelovens regler om straffemyndighed, dobbelt strafbarhed,
+					medvirken og handlinger foretaget i udlandet.
+				</p>
+
+			</div>
+
+			<div class="legal-note">
+
+				<h3>Autorisationsloven</h3>
+
+				<p>
+					<a class="law-reference" href="#paragraf-8">§ 8</a>
+					henviser til reglerne om tilsyn og autorisation. Ved en egentlig lovgivningsproces
+					bør det præciseres, hvordan en overtrædelse af denne lov konkret skal indgå
+					i de gældende regler om sundhedspersoners autorisation og tilsyn.
+				</p>
+
+			</div>
+
+			<div class="legal-note">
+
+				<h3>Registrering og persondata</h3>
+
+				<p>
+					<a class="law-reference" href="#paragraf-14-a">§ 14 a</a>
+					forudsætter, at registreringen udformes på en måde, der sikrer, at oplysninger
+					ikke kan henføres til enkeltpersoner, hverken direkte eller gennem kombination
+					med andre oplysninger.
+				</p>
+
+				<p>
+					Ved en egentlig lovgivningsproces skal hjemmel, databeskyttelsesregler,
+					adgang til oplysninger, opbevaringsperiode og offentliggørelse derfor fastlægges nærmere.
+				</p>
+
+			</div>
+
+		</div>
+	</section>
+
+	<section id="sporgsmaal">
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">06 · Videre juridisk arbejde</div>
+				<h2>Spørgsmål, der kræver yderligere afklaring</h2>
+			</div>
+
+			<p class="muted">
+				Et privat lovudkast er ikke det samme som et færdigt lovforslag udarbejdet
+				efter Folketingets lovtekniske og administrative processer. Følgende punkter
+				bør derfor gennemgås nærmere ved en eventuel videre behandling.
+			</p>
+
+			<ul class="question-list">
+
+				<li>
+					<span class="icon">1</span>
+					<span>
+						<strong>Straffemyndighed ved indgreb i udlandet</strong>
+						Den præcise sammenhæng mellem
+						<a class="law-reference" href="#paragraf-9">§ 9</a>
+						og straffelovens jurisdiktionsregler skal fastlægges.
+					</span>
+				</li>
+
+				<li>
+					<span class="icon">2</span>
+					<span>
+						<strong>Samspil med sundhedslovgivningen</strong>
+						Reglerne om samtykke, behandling af mindreårige og sundhedsfaglig
+						behandling skal gennemgås i forhold til forslaget.
+					</span>
+				</li>
+
+				<li>
+					<span class="icon">3</span>
+					<span>
+						<strong>Autorisationsretlige konsekvenser</strong>
+						Det bør præciseres, hvordan overtrædelser konkret skal påvirke
+						en sundhedspersons autorisation.
+					</span>
+				</li>
+
+				<li>
+					<span class="icon">4</span>
+					<span>
+						<strong>Registrering og databeskyttelse</strong>
+						<a class="law-reference" href="#paragraf-14-a">§ 14 a</a>
+						kræver en nærmere vurdering af hjemmel, anonymisering, adgang
+						og risiko for indirekte identifikation.
+					</span>
+				</li>
+
+				<li>
+					<span class="icon">5</span>
+					<span>
+						<strong>Grundlov og menneskerettigheder</strong>
+						Forslaget bør vurderes nærmere efter blandt andet grundlovens §§ 67 og 70
+						samt EMRK's relevante bestemmelser.
+					</span>
+				</li>
+
+				<li>
+					<span class="icon">6</span>
+					<span>
+						<strong>Administrative og økonomiske konsekvenser</strong>
+						En egentlig lovgivningsproces bør indeholde en nærmere vurdering
+						af konsekvenserne for sundhedsvæsen, myndigheder og domstole.
+					</span>
+				</li>
+
+			</ul>
+
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">07 · Grundprincip</div>
+				<h2>Forslagets centrale skelnen</h2>
+			</div>
+
+			<div class="summary-grid">
+
+				<article class="summary-card">
+					<div class="number">A</div>
+					<h3>Terapeutisk</h3>
+					<p>
+						Et irreversibelt indgreb kan være tilladt, hvis de konkrete
+						betingelser for medicinsk nødvendighed er opfyldt.
+					</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="number">B</div>
+					<h3>Ikke-terapeutisk</h3>
+					<p>
+						Et irreversibelt indgreb uden terapeutisk formål er efter
+						forslaget forbudt på mindreåriges kønsorganer.
+					</p>
+				</article>
+
+				<article class="summary-card">
+					<div class="number">C</div>
+					<h3>Myndig person</h3>
+					<p>
+						Efter myndighedsalderen træffer personen selv beslutning om
+						ikke-terapeutiske irreversible indgreb på egen krop.
+					</p>
+				</article>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="kilder">
+		<div class="container">
+
+			<div class="section-header">
+				<div class="section-number">08 · Kilder</div>
+				<h2>Officielle retskilder</h2>
+			</div>
+
+			<div class="sources">
+
+				<a class="source"
+					href="https://www.retsinformation.dk/eli/lta/1953/169"
+					target="_blank"
+					rel="noopener noreferrer">
+
+					<strong>Danmarks Riges Grundlov</strong>
+
+					<span>
+						Retsinformation · Grundlovens §§ 67, 70 og øvrige bestemmelser
+					</span>
+				</a>
+
+				<a class="source"
+					href="https://www.retsinformation.dk/eli/lta/2024/434"
+					target="_blank"
+					rel="noopener noreferrer">
+
+					<strong>Straffeloven</strong>
+
+					<span>
+						Retsinformation · Herunder reglerne om dansk straffemyndighed
+					</span>
+				</a>
+
+				<a class="source"
+					href="https://retsinformation.dk/eli/ft/201712L00019"
+					target="_blank"
+					rel="noopener noreferrer">
+
+					<strong>Lovforslag om trossamfund uden for folkekirken</strong>
+
+					<span>
+						Folketingstidende/Retsinformation · Bemærkninger om grundlovens § 67 og religionsfrihed
+					</span>
+				</a>
+
+				<a class="source"
+					href="https://retsinformation.dk/eli/lta/2003/386"
+					target="_blank"
+					rel="noopener noreferrer">
+
+					<strong>Lov om ændring af straffeloven og udlændingeloven (Kvindelig omskæring)</strong>
+
+					<span>
+						Retsinformation · Lovgivning om kvindelig omskæring og dansk straffemyndighed
+					</span>
+				</a>
+
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+
+			<div class="principle">
+				<div class="principle-title">Forslaget i én formulering</div>
+
+				<p>
+					<strong>
+						Ingen irreversible ikke-terapeutiske indgreb på mindreåriges kønsorganer.
+					</strong>
+				</p>
+
+				<p>
+					Kun dokumenteret medicinsk nødvendighed kan begrunde en undtagelse.
+					Ellers må beslutningen vente, til personen selv er myndig og kan give
+					informeret samtykke.
+				</p>
+			</div>
+
+		</div>
+	</section>
+
+</main>
+
+<footer>
+	<div class="container footer-grid">
+
+		<p>
+			© 2026
+			<a href="https://github.com/MrBang21"
+				target="_blank"
+				rel="noopener noreferrer">MrBang21</a>
+		</p>
+
+		<p>
+			Privat udarbejdet lovforslag · Ikke gældende lov
+		</p>
+
+	</div>
+</footer>
+
+<a class="top-link"
+	href="#top"
+	aria-label="Til toppen"
+	title="Til toppen">↑</a>
+
+</body>
+</html>
